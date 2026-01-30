@@ -1,0 +1,20 @@
+version: '3'
+services:
+  # 🦟 El Broker (Cartero)
+  mosquitto:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+  # 🐘 La Base de Datos
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: escuela_db
+    ports:
+      - "5435:5432"

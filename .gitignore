@@ -1,0 +1,13 @@
+cat <<EOT >> .gitignore
+venv/
+__pycache__/
+*.pkl
+.idea/
+.vscode/
+mosquitto.conf
+app_notas/build/
+app_notas/.dart_tool/
+app_notas/.flutter-plugins
+app_notas/.flutter-plugins-dependencies
+app_notas/.pub-cache/
+EOT
